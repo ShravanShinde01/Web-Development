@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container lala">
+        <div class="box" style="color: red;">I am shravan</div>
+    </div>
+    <script>
+        // let div = document.createElement("div");
+        // div.innerHTML = "I am inserted by <b> Shinde</b>"
+        // div.setAttribute("class", "aaaaa");
+        // document.querySelector(".container").replaceWith(div)
+
+        let cont = document.querySelector(".box");
+        cont.insertAdjacentHTML("afterend"," Hello");
+        console.log(cont.innerHTML);
+        
+        
+        
+    </script>
+</body>
+</html>

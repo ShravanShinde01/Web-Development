@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Payment Gateway</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        button{
+            padding:12px 25px;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        #status{
+            margin-top:30px;
+            font-size:22px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fake Payment Gateway</h1>
+
+    <button id="payBtn">Pay ₹500</button>
+
+    <h2 id="status"></h2>
+
+<script>
+
+const payBtn = document.getElementById("payBtn");
+const status = document.getElementById("status");
+
+payBtn.addEventListener("click",()=>{
+
+    status.innerHTML = "Connecting to Payment Gateway...";
+
+    fakePayment()
+    .then((message)=>{
+
+        status.innerHTML = message;
+
+    })
+    .catch((error)=>{
+
+        status.innerHTML = error;
+
+    });
+
+});
+
+
+function fakePayment(){
+
+    return new Promise((resolve,reject)=>{
+
+        console.log("Request Sent To Bank...");
+
+        setTimeout(()=>{
+
+            // Change true to false to test failure
+            let paymentSuccess = true;
+
+            if(paymentSuccess){
+
+                resolve("✅ Payment Successful");
+
+            }else{
+
+                reject("❌ Payment Failed");
+
+            }
+
+        },3000);
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>

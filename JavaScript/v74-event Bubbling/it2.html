@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .child{
+            height: 20px;
+            width: 20px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">aaaaaaaaaa
+        <div class="childcontainer">i
+            <div class="child">
+                i am baccha
+            </div>
+        </div>
+    </div>
+    
+    <script>
+          document.querySelector(".child").addEventListener("click",(e)=>{
+            e.stopPropagation();
+              alert("baccha clicked");
+          })
+          document.querySelector(".childcontainer").addEventListener("click",(e)=>{
+            e.stopPropagation();
+              alert("pappa clicked");
+          })
+          document.querySelector(".container").addEventListener("click",(e)=>{
+              alert("main pappa clicked");
+          })
+
+          function randomColor() {
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
+}
+          setInterval(()=>{
+              document.querySelector(".child").style.backgroundColor = randomColor();
+          },1000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        padding-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .box{
+        height: 30px;
+        width: 40px;
+        padding: 2px;
+        margin: 2px;
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    
+    <script>
+
+            let boxes = document.querySelectorAll(".box");
+
+boxes.forEach((box) => {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+    let r2 = Math.floor(Math.random() * 256);
+    let g2 = Math.floor(Math.random() * 256);
+    let b2 = Math.floor(Math.random() * 256);
+
+    box.style.color = `rgb(${r2}, ${g2}, ${b2})`;
+});
+            
+            
+    </script>
+</body>
+</html>
