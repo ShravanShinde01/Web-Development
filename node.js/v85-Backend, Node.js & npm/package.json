@@ -1,0 +1,17 @@
+{
+  "name": "sportify-clone",
+  "version": "1.0.0",
+  "description": "music player",
+  "license": "ISC",
+  "author": "Shravan",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "date-time": "^4.0.0",
+    "express": "^5.2.1",
+    "slugify": "^1.6.9"
+  }
+}
